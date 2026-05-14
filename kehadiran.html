@@ -157,7 +157,8 @@
 <!-- MODAL SURAT IZIN -->
 <div 
     id="izinModal"
-    class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
+    class="fixed inset-0 bg-black/40 items-center justify-center z-50"
+    style="display:none;">
 
     <div class="bg-white w-[90%] max-w-md rounded-2xl p-6 shadow-xl">
 
@@ -304,13 +305,13 @@
     <script>
 
 function openModal() {
-    document.getElementById('izinModal').classList.remove('hidden');
-    document.getElementById('izinModal').classList.add('flex');
+    const modal = document.getElementById('izinModal');
+    modal.style.display = 'flex';
 }
 
 function closeModal() {
-    document.getElementById('izinModal').classList.add('hidden');
-    document.getElementById('izinModal').classList.remove('flex');
+    const modal = document.getElementById('izinModal');
+    modal.style.display = 'none';
 }
   // ==================== DATA ====================
   const studentData = {
