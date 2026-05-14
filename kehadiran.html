@@ -314,7 +314,7 @@ function closeModal() {
 }
   // ==================== DATA ====================
   const studentData = {
-    name: "Ahmad Rizky Pratama",
+    name: localStorage.getItem("studentName") || "",
     photo: null,
     birthPlace: "Surabaya",
     birthDate: "15 Maret 2012",
