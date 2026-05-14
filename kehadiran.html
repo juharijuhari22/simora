@@ -884,33 +884,35 @@ function closeModal() {
   }
   
   // ==================== ELEMENT SDK ====================
+  if (window.elementSdk) {
   window.elementSdk.init({
     defaultConfig,
-    onConfigChange:async(config)=>{
-      const t=document.getElementById("login-title");if(t)t.textContent=config.app_title||defaultConfig.app_title;
-      const s=document.getElementById("login-school");if(s)s.textContent=config.school_name||defaultConfig.school_name;
-      const st=document.getElementById("sidebar-title");if(st)st.textContent=config.app_title||defaultConfig.app_title;
-      const ts=document.getElementById("topbar-school");if(ts)ts.textContent=config.school_name||defaultConfig.school_name;
+    onConfigChange: async (config) => {
+      const t = document.getElementById("login-title"); if (t) t.textContent = config.app_title || defaultConfig.app_title;
+      const s = document.getElementById("login-school"); if (s) s.textContent = config.school_name || defaultConfig.school_name;
+      const st = document.getElementById("sidebar-title"); if (st) st.textContent = config.app_title || defaultConfig.app_title;
+      const ts = document.getElementById("topbar-school"); if (ts) ts.textContent = config.school_name || defaultConfig.school_name;
     },
-    mapToCapabilities:(config)=>({
-      recolorables:[
-        {get:()=>config.bg_color||defaultConfig.bg_color,set:v=>{config.bg_color=v;window.elementSdk.setConfig({bg_color:v})}},
-        {get:()=>config.surface_color||defaultConfig.surface_color,set:v=>{config.surface_color=v;window.elementSdk.setConfig({surface_color:v})}},
-        {get:()=>config.text_color||defaultConfig.text_color,set:v=>{config.text_color=v;window.elementSdk.setConfig({text_color:v})}},
-        {get:()=>config.primary_color||defaultConfig.primary_color,set:v=>{config.primary_color=v;window.elementSdk.setConfig({primary_color:v})}},
-        {get:()=>config.accent_color||defaultConfig.accent_color,set:v=>{config.accent_color=v;window.elementSdk.setConfig({accent_color:v})}}
+    mapToCapabilities: (config) => ({
+      recolorables: [
+        { get: () => config.bg_color || defaultConfig.bg_color, set: v => { config.bg_color = v; window.elementSdk.setConfig({ bg_color: v }) } },
+        { get: () => config.surface_color || defaultConfig.surface_color, set: v => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }) } },
+        { get: () => config.text_color || defaultConfig.text_color, set: v => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }) } },
+        { get: () => config.primary_color || defaultConfig.primary_color, set: v => { config.primary_color = v; window.elementSdk.setConfig({ primary_color: v }) } },
+        { get: () => config.accent_color || defaultConfig.accent_color, set: v => { config.accent_color = v; window.elementSdk.setConfig({ accent_color: v }) } }
       ],
-      borderables:[],
-      fontEditable:{get:()=>config.font_family||"Plus Jakarta Sans",set:v=>{config.font_family=v;window.elementSdk.setConfig({font_family:v})}},
-      fontSizeable:{get:()=>config.font_size||14,set:v=>{config.font_size=v;window.elementSdk.setConfig({font_size:v})}}
+      borderables: [],
+      fontEditable: { get: () => config.font_family || "Plus Jakarta Sans", set: v => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }) } },
+      fontSizeable: { get: () => config.font_size || 14, set: v => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }) } }
     }),
-    mapToEditPanelValues:(config)=>new Map([
-      ["app_title",config.app_title||defaultConfig.app_title],
-      ["school_name",config.school_name||defaultConfig.school_name]
+    mapToEditPanelValues: (config) => new Map([
+      ["app_title", config.app_title || defaultConfig.app_title],
+      ["school_name", config.school_name || defaultConfig.school_name]
     ])
   });
-  
-  render();
+}
+
+render();
   </script>
    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fbade74e5879bda',t:'MTc3ODc3MTgzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
   </body></html>
