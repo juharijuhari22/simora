@@ -264,14 +264,14 @@
     <script>
   // ==================== DATA ====================
   const studentData = {
-    name: "Ahmad Rizky Pratama",
+    name: localStorage.getItem("studentName") || "",
     photo: null,
     birthPlace: "Surabaya",
     birthDate: "15 Maret 2012",
     address: "Jl. Merdeka No. 45, RT 03/RW 05, Kel. Tulusrejo, Surabaya",
     nis: "2024001234",
     class: "V-A",
-    parentName: "Budi Pratama",
+    parentName: localStorage.getItem("parentName") || "Budi Pratama",
     parentPhone: "0812-3456-7890",
     gender: "Laki-laki"
   };
