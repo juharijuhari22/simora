@@ -1,0 +1,891 @@
+<html lang="id" class="h-full"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMORA</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <script src="/codelet/eyJhbGciOiJIUzI1NiJ9.eyJjIjoiYzhzbjljNHFuNzc0eDZ2NiIsImV4cCI6MTc3ODgxNTAzNiwiZGVwIjoiQVNTSVNUQU5UX1RIUkVBRF9DT0RFTEVUIzlmNmViNzdhLWIxZmQtNDY0My05Mjc4LTgyZDU3M2UxNDE1MCJ9.SiAG1PJFV6jCRzeQhvMbS6nJwJQM4Lu6E_EH3cfqfN8/element_sdk.js?pin_id=7f69d891ba2bd70385777a7fa855716e"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <style>
+  *{font-family:'Plus Jakarta Sans',sans-serif;margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;overflow:hidden}
+  ::-webkit-scrollbar{width:6px}
+  ::-webkit-scrollbar-track{background:transparent}
+  ::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:8px}
+  .sidebar-item{transition:all .2s}
+  .sidebar-item:hover,.sidebar-item.active{background:rgba(255,255,255,.15);transform:translateX(4px)}
+  .card-hover{transition:all .25s}
+  .card-hover:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  .fade-in{animation:fadeIn .4s ease forwards}
+  .stagger-1{animation-delay:.05s;opacity:0}
+  .stagger-2{animation-delay:.1s;opacity:0}
+  .stagger-3{animation-delay:.15s;opacity:0}
+  .stagger-4{animation-delay:.2s;opacity:0}
+  .login-bg{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#0f172a 100%)}
+  .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1)}
+  .sidebar-gradient{background:linear-gradient(180deg,#0f2942 0%,#163356 50%,#0f2942 100%)}
+  .progress-bar{transition:width .8s ease}
+  .chart-bar{transition:height .6s ease,background .3s}
+  .tooltip-wrap:hover .tooltip-box{opacity:1;transform:translateY(0)}
+  .tooltip-box{opacity:0;transform:translateY(4px);transition:all .2s}
+  input:focus{outline:none;box-shadow:0 0 0 3px rgba(59,130,246,.3)}
+  </style>
+    <style>body { box-sizing: border-box; }</style>
+    <script src="/codelet/eyJhbGciOiJIUzI1NiJ9.eyJjIjoiYzhzbjljNHFuNzc0eDZ2NiIsImV4cCI6MTc3ODgxNTAzNiwiZGVwIjoiQVNTSVNUQU5UX1RIUkVBRF9DT0RFTEVUIzlmNmViNzdhLWIxZmQtNDY0My05Mjc4LTgyZDU3M2UxNDE1MCJ9.SiAG1PJFV6jCRzeQhvMbS6nJwJQM4Lu6E_EH3cfqfN8/data_sdk.js?pin_id=7f69d891ba2bd70385777a7fa855716e" type="text/javascript"></script>
+   <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.z-30{z-index:30}.mx-auto{margin-left:auto;margin-right:auto}.mb-1\.5{margin-bottom:0.375rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-6{margin-top:1.5rem}.mb-3{margin-bottom:0.75rem}.mt-0\.5{margin-top:0.125rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-full{height:100%}.h-16{height:4rem}.h-8{height:2rem}.h-2{height:0.5rem}.h-32{height:8rem}.h-4{height:1rem}.h-40{height:10rem}.h-5{height:1.25rem}.h-9{height:2.25rem}.h-\[18px\]{height:18px}.h-24{height:6rem}.h-3{height:0.75rem}.h-2\.5{height:0.625rem}.h-10{height:2.5rem}.w-full{width:100%}.w-16{width:4rem}.w-8{width:2rem}.w-2{width:0.5rem}.w-32{width:8rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-64{width:16rem}.w-9{width:2.25rem}.w-\[18px\]{width:18px}.w-24{width:6rem}.w-3{width:0.75rem}.w-20{width:5rem}.w-10{width:2.5rem}.min-w-0{min-width:0px}.min-w-\[200px\]{min-width:200px}.max-w-md{max-width:28rem}.max-w-6xl{max-width:72rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.-rotate-90{--tw-rotate:-90deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-5{gap:1.25rem}.gap-4{gap:1rem}.gap-x-6{column-gap:1.5rem}.gap-y-1{row-gap:0.25rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.whitespace-nowrap{white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-full{border-radius:9999px}.rounded{border-radius:0.25rem}.rounded-t-lg{border-top-left-radius:0.5rem;border-top-right-radius:0.5rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-amber-100{--tw-border-opacity:1;border-color:rgb(254 243 199 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-blue-300{--tw-border-opacity:1;border-color:rgb(147 197 253 / var(--tw-border-opacity, 1))}.border-red-100{--tw-border-opacity:1;border-color:rgb(254 226 226 / var(--tw-border-opacity, 1))}.border-red-300{--tw-border-opacity:1;border-color:rgb(252 165 165 / var(--tw-border-opacity, 1))}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-green-100{--tw-border-opacity:1;border-color:rgb(220 252 231 / var(--tw-border-opacity, 1))}.border-purple-100{--tw-border-opacity:1;border-color:rgb(243 232 255 / var(--tw-border-opacity, 1))}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-red-500\/10{background-color:rgb(239 68 68 / 0.1)}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-amber-400{--tw-bg-opacity:1;background-color:rgb(251 191 36 / var(--tw-bg-opacity, 1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-400{--tw-bg-opacity:1;background-color:rgb(96 165 250 / var(--tw-bg-opacity, 1))}.bg-green-500{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.bg-red-400{--tw-bg-opacity:1;background-color:rgb(248 113 113 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/15{background-color:rgb(255 255 255 / 0.15)}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.bg-yellow-400{--tw-bg-opacity:1;background-color:rgb(250 204 21 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226 / var(--tw-bg-opacity, 1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-green-50{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.bg-yellow-50{--tw-bg-opacity:1;background-color:rgb(254 252 232 / var(--tw-bg-opacity, 1))}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-purple-50{--tw-bg-opacity:1;background-color:rgb(250 245 255 / var(--tw-bg-opacity, 1))}.bg-purple-500{--tw-bg-opacity:1;background-color:rgb(168 85 247 / var(--tw-bg-opacity, 1))}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-blue-600{--tw-gradient-from:#2563eb var(--tw-gradient-from-position);--tw-gradient-to:rgb(37 99 235 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-blue-800{--tw-gradient-to:#1e40af var(--tw-gradient-to-position)}.to-indigo-700{--tw-gradient-to:#4338ca var(--tw-gradient-to-position)}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-8{padding:2rem}.p-2{padding:0.5rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.pb-1{padding-bottom:0.25rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[9px\]{font-size:9px}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.text-blue-200{--tw-text-opacity:1;color:rgb(191 219 254 / var(--tw-text-opacity, 1))}.text-blue-300\/40{color:rgb(147 197 253 / 0.4)}.text-blue-300\/70{color:rgb(147 197 253 / 0.7)}.text-red-300{--tw-text-opacity:1;color:rgb(252 165 165 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-blue-100{--tw-text-opacity:1;color:rgb(219 234 254 / var(--tw-text-opacity, 1))}.text-blue-200\/70{color:rgb(191 219 254 / 0.7)}.text-blue-300\/50{color:rgb(147 197 253 / 0.5)}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-green-500{--tw-text-opacity:1;color:rgb(34 197 94 / var(--tw-text-opacity, 1))}.text-red-300\/70{color:rgb(252 165 165 / 0.7)}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9 / var(--tw-text-opacity, 1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-green-700{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.text-yellow-600{--tw-text-opacity:1;color:rgb(202 138 4 / var(--tw-text-opacity, 1))}.placeholder-blue-300\/50::placeholder{color:rgb(147 197 253 / 0.5)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:bg-blue-400:hover{--tw-bg-opacity:1;background-color:rgb(96 165 250 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.hover\:text-red-300:hover{--tw-text-opacity:1;color:rgb(252 165 165 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:block{display:block}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:p-10{padding:2.5rem}.sm\:p-6{padding:1.5rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
+   <body class="h-full">
+    <div id="app" class="h-full w-full overflow-hidden">
+    <div class="h-full w-full flex overflow-hidden" style="background:#f1f5f9">
+      <!-- Sidebar -->
+      <aside class="sidebar-gradient w-64 transition-all duration-300 flex-shrink-0 flex flex-col h-full overflow-hidden z-30" id="sidebar">
+        <div class="p-5 flex items-center gap-3 border-b border-white/10 flex-shrink-0">
+          <div class="w-9 h-9 rounded-xl bg-blue-500 flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="graduation-cap" class="lucide lucide-graduation-cap w-5 h-5 text-white"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          </div>
+          <div class="">
+            <h2 class="text-white font-800 text-sm tracking-tight" id="sidebar-title">SIMORA</h2>
+            <p class="text-blue-300/50 text-[10px]">Monitoring Siswa</p>
+          </div>
+        </div>
+        <nav class="flex-1 py-3 px-3 space-y-1 overflow-auto">
+          
+            <button data-page="dashboard" onclick="window.location.href='dashboard.html'" class="sidebar-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-blue-200/70 hover:text-white transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layout-dashboard" class="lucide lucide-layout-dashboard w-[18px] h-[18px] flex-shrink-0"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+              <span class="">Dashboard</span>
+            </button>
+            <button data-page="profile" onclick="window.location.href='profil.html'" class="sidebar-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-blue-200/70 hover:text-white transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user-circle" class="lucide lucide-user-circle w-[18px] h-[18px] flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path></svg>
+              <span class="">Profil Anak</span>
+            </button>
+            <button data-page="calendar" onclick="window.location.href='kalender.html'" class="sidebar-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm active bg-white/15 text-white font-600 transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-days" class="lucide lucide-calendar-days w-[18px] h-[18px] flex-shrink-0"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg>
+              <span class="">Kalender Akademik</span>
+            </button>
+            <button data-page="schedule" onclick="window.location.href='jadwal.html'" class="sidebar-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-blue-200/70 hover:text-white transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clock" class="lucide lucide-clock w-[18px] h-[18px] flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span class="">Jadwal Pelajaran</span>
+            </button>
+            <button data-page="grades" onclick="window.location.href='nilai.html'" class="sidebar-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-blue-200/70 hover:text-white transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bar-chart-3" class="lucide lucide-bar-chart-3 w-[18px] h-[18px] flex-shrink-0"><path d="M3 3v18h18"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>
+              <span class="">Rekap Nilai</span>
+            </button>
+            <button data-page="attendance" onclick="window.location.href='kehadiran.html'" class="sidebar-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-blue-200/70 hover:text-white transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-check" class="lucide lucide-clipboard-check w-[18px] h-[18px] flex-shrink-0"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg>
+              <span class="">Rekap Kehadiran</span>
+            </button>
+            <button data-page="achievements" onclick="window.location.href='prestasi.html'" class="sidebar-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-blue-200/70 hover:text-white transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trophy" class="lucide lucide-trophy w-[18px] h-[18px] flex-shrink-0"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>
+              <span class="">Catatan Prestasi</span>
+            </button>
+        </nav>
+        <div class="p-3 border-t border-white/10 flex-shrink-0">
+          <button id="logoutBtn" onclick="window.location.href='index.html'" class="sidebar-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-red-300/70 hover:text-red-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="log-out" class="lucide lucide-log-out w-[18px] h-[18px] flex-shrink-0"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" x2="9" y1="12" y2="12"></line></svg>
+            <span class="">Keluar</span>
+          </button>
+        </div>
+      </aside>
+  
+      <!-- Main -->
+      <div class="flex-1 flex flex-col h-full overflow-hidden min-w-0">
+        <!-- Topbar -->
+        <header class="bg-white border-b border-gray-200 px-4 sm:px-6 py-3 flex items-center justify-between flex-shrink-0">
+          <div class="flex items-center gap-3">
+            <button id="toggleSidebar" class="p-2 hover:bg-gray-100 rounded-lg transition"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" class="lucide lucide-menu w-5 h-5 text-gray-500"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button>
+            <div>
+              <h1 class="text-sm font-700 text-gray-800">Kalender Akademik</h1>
+              <p class="text-[11px] text-gray-400" id="topbar-school">SDN Tulusrejo 3</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="text-right hidden sm:block">
+              <p class="text-xs font-600 text-gray-700">b</p>
+              <p class="text-[10px] text-gray-400">Orang Tua</p>
+            </div>
+            <div class="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" class="lucide lucide-user w-4 h-4 text-blue-600"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+          </div>
+        </header>
+  
+        <!-- Content -->
+        <main class="flex-1 overflow-auto p-4 sm:p-6">
+          
+    <div class="max-w-3xl mx-auto space-y-5">
+      <div class="bg-white rounded-2xl p-5 shadow-sm fade-in">
+        <h3 class="font-700 text-gray-800 text-sm mb-4 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-days" class="lucide lucide-calendar-days w-4 h-4 text-blue-500"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg> Kalender Akademik 2024/2025</h3>
+        <div class="flex gap-3 mb-4">
+          <span class="flex items-center gap-1.5 text-xs"><span class="w-3 h-3 rounded bg-red-100 border border-red-300"></span>Hari Libur</span>
+          <span class="flex items-center gap-1.5 text-xs"><span class="w-3 h-3 rounded bg-blue-100 border border-blue-300"></span>Kegiatan Sekolah</span>
+        </div>
+        <div class="space-y-2">
+          
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-red-50 border border-red-100">
+            <div class="w-8 h-8 rounded-lg bg-red-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-off" class="lucide lucide-calendar-off w-4 h-4 text-white"><path d="M4.18 4.18A2 2 0 0 0 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 1.82-1.18"></path><path d="M21 15.5V6a2 2 0 0 0-2-2H9.5"></path><path d="M16 2v4"></path><path d="M3 10h7"></path><path d="M21 10h-5.5"></path><line x1="2" x2="22" y1="2" y2="22"></line></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Tahun Baru</p>
+              <p class="text-[10px] text-gray-400">1 Jan 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-red-100 text-red-600">Libur</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-red-50 border border-red-100">
+            <div class="w-8 h-8 rounded-lg bg-red-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-off" class="lucide lucide-calendar-off w-4 h-4 text-white"><path d="M4.18 4.18A2 2 0 0 0 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 1.82-1.18"></path><path d="M21 15.5V6a2 2 0 0 0-2-2H9.5"></path><path d="M16 2v4"></path><path d="M3 10h7"></path><path d="M21 10h-5.5"></path><line x1="2" x2="22" y1="2" y2="22"></line></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Isra Mi'raj Nabi Muhammad SAW</p>
+              <p class="text-[10px] text-gray-400">29 Jan 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-red-100 text-red-600">Libur</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-blue-50 border border-blue-100">
+            <div class="w-8 h-8 rounded-lg bg-blue-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-check" class="lucide lucide-calendar-check w-4 h-4 text-white"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line><path d="m9 16 2 2 4-4"></path></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Penilaian Tengah Semester (PTS)</p>
+              <p class="text-[10px] text-gray-400">3-8 Feb 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-blue-100 text-blue-600">Kegiatan</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-red-50 border border-red-100">
+            <div class="w-8 h-8 rounded-lg bg-red-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-off" class="lucide lucide-calendar-off w-4 h-4 text-white"><path d="M4.18 4.18A2 2 0 0 0 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 1.82-1.18"></path><path d="M21 15.5V6a2 2 0 0 0-2-2H9.5"></path><path d="M16 2v4"></path><path d="M3 10h7"></path><path d="M21 10h-5.5"></path><line x1="2" x2="22" y1="2" y2="22"></line></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Hari Raya Nyepi</p>
+              <p class="text-[10px] text-gray-400">17 Mar 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-red-100 text-red-600">Libur</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-red-50 border border-red-100">
+            <div class="w-8 h-8 rounded-lg bg-red-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-off" class="lucide lucide-calendar-off w-4 h-4 text-white"><path d="M4.18 4.18A2 2 0 0 0 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 1.82-1.18"></path><path d="M21 15.5V6a2 2 0 0 0-2-2H9.5"></path><path d="M16 2v4"></path><path d="M3 10h7"></path><path d="M21 10h-5.5"></path><line x1="2" x2="22" y1="2" y2="22"></line></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Wafat Isa Al Masih</p>
+              <p class="text-[10px] text-gray-400">28 Mar 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-red-100 text-red-600">Libur</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-red-50 border border-red-100">
+            <div class="w-8 h-8 rounded-lg bg-red-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-off" class="lucide lucide-calendar-off w-4 h-4 text-white"><path d="M4.18 4.18A2 2 0 0 0 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 1.82-1.18"></path><path d="M21 15.5V6a2 2 0 0 0-2-2H9.5"></path><path d="M16 2v4"></path><path d="M3 10h7"></path><path d="M21 10h-5.5"></path><line x1="2" x2="22" y1="2" y2="22"></line></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Hari Raya Idul Fitri</p>
+              <p class="text-[10px] text-gray-400">31 Mar - 2 Apr 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-red-100 text-red-600">Libur</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-blue-50 border border-blue-100">
+            <div class="w-8 h-8 rounded-lg bg-blue-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-check" class="lucide lucide-calendar-check w-4 h-4 text-white"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line><path d="m9 16 2 2 4-4"></path></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Class Meeting &amp; Outing</p>
+              <p class="text-[10px] text-gray-400">14-18 Apr 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-blue-100 text-blue-600">Kegiatan</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-red-50 border border-red-100">
+            <div class="w-8 h-8 rounded-lg bg-red-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-off" class="lucide lucide-calendar-off w-4 h-4 text-white"><path d="M4.18 4.18A2 2 0 0 0 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 1.82-1.18"></path><path d="M21 15.5V6a2 2 0 0 0-2-2H9.5"></path><path d="M16 2v4"></path><path d="M3 10h7"></path><path d="M21 10h-5.5"></path><line x1="2" x2="22" y1="2" y2="22"></line></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Hari Buruh Internasional</p>
+              <p class="text-[10px] text-gray-400">1 Mei 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-red-100 text-red-600">Libur</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-red-50 border border-red-100">
+            <div class="w-8 h-8 rounded-lg bg-red-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-off" class="lucide lucide-calendar-off w-4 h-4 text-white"><path d="M4.18 4.18A2 2 0 0 0 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 1.82-1.18"></path><path d="M21 15.5V6a2 2 0 0 0-2-2H9.5"></path><path d="M16 2v4"></path><path d="M3 10h7"></path><path d="M21 10h-5.5"></path><line x1="2" x2="22" y1="2" y2="22"></line></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Hari Raya Waisak</p>
+              <p class="text-[10px] text-gray-400">12 Mei 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-red-100 text-red-600">Libur</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-red-50 border border-red-100">
+            <div class="w-8 h-8 rounded-lg bg-red-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-off" class="lucide lucide-calendar-off w-4 h-4 text-white"><path d="M4.18 4.18A2 2 0 0 0 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 1.82-1.18"></path><path d="M21 15.5V6a2 2 0 0 0-2-2H9.5"></path><path d="M16 2v4"></path><path d="M3 10h7"></path><path d="M21 10h-5.5"></path><line x1="2" x2="22" y1="2" y2="22"></line></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Kenaikan Isa Al Masih</p>
+              <p class="text-[10px] text-gray-400">29 Mei 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-red-100 text-red-600">Libur</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-red-50 border border-red-100">
+            <div class="w-8 h-8 rounded-lg bg-red-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-off" class="lucide lucide-calendar-off w-4 h-4 text-white"><path d="M4.18 4.18A2 2 0 0 0 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 1.82-1.18"></path><path d="M21 15.5V6a2 2 0 0 0-2-2H9.5"></path><path d="M16 2v4"></path><path d="M3 10h7"></path><path d="M21 10h-5.5"></path><line x1="2" x2="22" y1="2" y2="22"></line></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Hari Lahir Pancasila</p>
+              <p class="text-[10px] text-gray-400">1 Jun 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-red-100 text-red-600">Libur</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-blue-50 border border-blue-100">
+            <div class="w-8 h-8 rounded-lg bg-blue-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-check" class="lucide lucide-calendar-check w-4 h-4 text-white"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line><path d="m9 16 2 2 4-4"></path></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Penilaian Akhir Semester (PAS)</p>
+              <p class="text-[10px] text-gray-400">2-7 Jun 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-blue-100 text-blue-600">Kegiatan</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-blue-50 border border-blue-100">
+            <div class="w-8 h-8 rounded-lg bg-blue-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-check" class="lucide lucide-calendar-check w-4 h-4 text-white"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line><path d="m9 16 2 2 4-4"></path></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Pembagian Rapor</p>
+              <p class="text-[10px] text-gray-400">14 Jun 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-blue-100 text-blue-600">Kegiatan</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-red-50 border border-red-100">
+            <div class="w-8 h-8 rounded-lg bg-red-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-off" class="lucide lucide-calendar-off w-4 h-4 text-white"><path d="M4.18 4.18A2 2 0 0 0 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 1.82-1.18"></path><path d="M21 15.5V6a2 2 0 0 0-2-2H9.5"></path><path d="M16 2v4"></path><path d="M3 10h7"></path><path d="M21 10h-5.5"></path><line x1="2" x2="22" y1="2" y2="22"></line></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Libur Semester</p>
+              <p class="text-[10px] text-gray-400">16 Jun - 5 Jul 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-red-100 text-red-600">Libur</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-blue-50 border border-blue-100">
+            <div class="w-8 h-8 rounded-lg bg-blue-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-check" class="lucide lucide-calendar-check w-4 h-4 text-white"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line><path d="m9 16 2 2 4-4"></path></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">Masuk Semester Ganjil</p>
+              <p class="text-[10px] text-gray-400">7 Jul 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-blue-100 text-blue-600">Kegiatan</span>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-red-50 border border-red-100">
+            <div class="w-8 h-8 rounded-lg bg-red-400 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-off" class="lucide lucide-calendar-off w-4 h-4 text-white"><path d="M4.18 4.18A2 2 0 0 0 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 1.82-1.18"></path><path d="M21 15.5V6a2 2 0 0 0-2-2H9.5"></path><path d="M16 2v4"></path><path d="M3 10h7"></path><path d="M21 10h-5.5"></path><line x1="2" x2="22" y1="2" y2="22"></line></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">HUT Kemerdekaan RI</p>
+              <p class="text-[10px] text-gray-400">17 Ags 2025</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 bg-red-100 text-red-600">Libur</span>
+          </div>
+        </div>
+      </div>
+    </div>
+        </main>
+      </div>
+    </div></div>
+    <script>
+  // ==================== DATA ====================
+  const studentData = {
+    name: "Ahmad Rizky Pratama",
+    photo: null,
+    birthPlace: "Surabaya",
+    birthDate: "15 Maret 2012",
+    address: "Jl. Merdeka No. 45, RT 03/RW 05, Kel. Tulusrejo, Surabaya",
+    nis: "2024001234",
+    class: "V-A",
+    parentName: "Budi Pratama",
+    parentPhone: "0812-3456-7890",
+    gender: "Laki-laki"
+  };
+  
+  const semesters = [
+    {id:1,label:"Sem 1 - Kelas IV",kelas:"IV"},
+    {id:2,label:"Sem 2 - Kelas IV",kelas:"IV"},
+    {id:3,label:"Sem 1 - Kelas V",kelas:"V"},
+    {id:4,label:"Sem 2 - Kelas V",kelas:"V"}
+  ];
+  
+  const subjects = ["Matematika","B. Indonesia","B. Inggris","IPA","IPS","PKN","Seni Budaya","PJOK"];
+  
+  function generateGrades(){
+    const data={};
+    semesters.forEach(s=>{
+      data[s.id]=subjects.map(subj=>{
+        const t=Math.floor(Math.random()*21)+70;
+        const k=Math.floor(Math.random()*21)+70;
+        const u=Math.floor(Math.random()*21)+70;
+        const a=Math.floor(Math.random()*21)+70;
+        return{subject:subj,tugas:t,kuis:k,uts:u,uas:a,avg:Math.round((t+k+u+a)/4)};
+      });
+    });
+    return data;
+  }
+  const gradesData=generateGrades();
+  
+  function generateAttendance(){
+    const data={};
+    semesters.forEach(s=>{
+      const total=Math.floor(Math.random()*11)+110;
+      const sakit=Math.floor(Math.random()*4);
+      const izin=Math.floor(Math.random()*3);
+      const alpha=Math.floor(Math.random()*2);
+      data[s.id]={total,hadir:total-sakit-izin-alpha,sakit,izin,alpha};
+    });
+    return data;
+  }
+  const attendanceData=generateAttendance();
+  
+  const achievements=[
+    {title:"Juara 1 Olimpiade Matematika Tingkat Kecamatan",date:"Maret 2025",type:"Akademik",icon:"trophy"},
+    {title:"Juara 2 Lomba Cerita Pendek Bahasa Indonesia",date:"November 2024",type:"Akademik",icon:"award"},
+    {title:"Juara 1 Kelas - Semester 2 Kelas IV",date:"Juni 2024",type:"Kelas",icon:"star"},
+    {title:"Peserta Terbaik Pramuka Tingkat Sekolah",date:"Agustus 2024",type:"Non-Akademik",icon:"medal"},
+    {title:"Juara 2 Lomba Bulu Tangkis Antar Sekolah",date:"Mei 2024",type:"Olahraga",icon:"trophy"}
+  ];
+  
+  const schedule={
+    Senin:[{time:"07:00-07:45",subj:"Upacara"},{time:"07:45-09:15",subj:"Matematika"},{time:"09:30-11:00",subj:"B. Indonesia"},{time:"11:00-12:30",subj:"IPA"}],
+    Selasa:[{time:"07:00-08:30",subj:"B. Inggris"},{time:"08:45-10:15",subj:"IPS"},{time:"10:30-12:00",subj:"PKN"}],
+    Rabu:[{time:"07:00-08:30",subj:"Matematika"},{time:"08:45-10:15",subj:"IPA"},{time:"10:30-12:00",subj:"Seni Budaya"}],
+    Kamis:[{time:"07:00-08:30",subj:"B. Indonesia"},{time:"08:45-10:15",subj:"B. Inggris"},{time:"10:30-12:00",subj:"PJOK"}],
+    Jumat:[{time:"07:00-08:30",subj:"IPS"},{time:"08:45-10:15",subj:"PKN"},{time:"10:15-11:30",subj:"Seni Budaya"}]
+  };
+  
+  const scheduleAttendance={};
+  Object.keys(schedule).forEach(day=>{
+    scheduleAttendance[day]=schedule[day].map(()=>Math.random()>.12?"Hadir":"Tidak Hadir");
+  });
+  
+  const calendarEvents=[
+    {date:"1 Jan 2025",event:"Tahun Baru",type:"libur"},
+    {date:"29 Jan 2025",event:"Isra Mi'raj Nabi Muhammad SAW",type:"libur"},
+    {date:"3-8 Feb 2025",event:"Penilaian Tengah Semester (PTS)",type:"kegiatan"},
+    {date:"17 Mar 2025",event:"Hari Raya Nyepi",type:"libur"},
+    {date:"28 Mar 2025",event:"Wafat Isa Al Masih",type:"libur"},
+    {date:"31 Mar - 2 Apr 2025",event:"Hari Raya Idul Fitri",type:"libur"},
+    {date:"14-18 Apr 2025",event:"Class Meeting & Outing",type:"kegiatan"},
+    {date:"1 Mei 2025",event:"Hari Buruh Internasional",type:"libur"},
+    {date:"12 Mei 2025",event:"Hari Raya Waisak",type:"libur"},
+    {date:"29 Mei 2025",event:"Kenaikan Isa Al Masih",type:"libur"},
+    {date:"1 Jun 2025",event:"Hari Lahir Pancasila",type:"libur"},
+    {date:"2-7 Jun 2025",event:"Penilaian Akhir Semester (PAS)",type:"kegiatan"},
+    {date:"14 Jun 2025",event:"Pembagian Rapor",type:"kegiatan"},
+    {date:"16 Jun - 5 Jul 2025",event:"Libur Semester",type:"libur"},
+    {date:"7 Jul 2025",event:"Masuk Semester Ganjil",type:"kegiatan"},
+    {date:"17 Ags 2025",event:"HUT Kemerdekaan RI",type:"libur"},
+  ];
+  
+  // ==================== STATE ====================
+  let currentPage="login";
+  let sidebarOpen=true;
+  
+  // ==================== CONFIG ====================
+  const defaultConfig={
+    app_title:"SIMORA",
+    school_name:"SDN Tulusrejo 3",
+    bg_color:"#0f2942",
+    surface_color:"#ffffff",
+    text_color:"#1e293b",
+    primary_color:"#2563eb",
+    accent_color:"#f59e0b"
+  };
+  
+  function getC(k){return window.elementSdk?.config?.[k]||defaultConfig[k]}
+  
+  // ==================== RENDER ENGINE ====================
+  function render(){
+    const app=document.getElementById("app");
+    if(currentPage==="login") app.innerHTML=renderLogin();
+    else app.innerHTML=renderDashboardShell();
+    lucide.createIcons();
+    attachEvents();
+  }
+  
+  // ==================== LOGIN ====================
+  function renderLogin(){
+    return `
+    <div class="login-bg h-full w-full flex items-center justify-center p-4 overflow-auto">
+      <div class="glass rounded-2xl p-8 sm:p-10 w-full max-w-md fade-in">
+        <div class="text-center mb-8">
+          <div class="w-16 h-16 rounded-2xl bg-blue-500 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
+          </div>
+          <h1 class="text-2xl font-800 text-white tracking-tight" id="login-title">${getC("app_title")}</h1>
+          <p class="text-blue-200 text-sm mt-1">Sistem Monitoring Orang Tua</p>
+          <p class="text-blue-300/70 text-xs mt-1" id="login-school">${getC("school_name")}</p>
+        </div>
+        <div class="space-y-4">
+          <div>
+            <label for="childName" class="text-blue-200 text-xs font-600 mb-1.5 block">Nama Lengkap Anak</label>
+            <input id="childName" type="text" placeholder="Masukkan nama lengkap anak" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-blue-300/50 text-sm">
+          </div>
+          <div>
+            <label for="parentName" class="text-blue-200 text-xs font-600 mb-1.5 block">Nama Lengkap Orang Tua</label>
+            <input id="parentName" type="text" placeholder="Masukkan nama lengkap orang tua" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-blue-300/50 text-sm">
+          </div>
+          <div id="loginError" class="hidden text-red-300 text-xs bg-red-500/10 rounded-lg p-3"></div>
+          <button id="loginBtn" class="w-full py-3 rounded-xl bg-blue-500 hover:bg-blue-400 text-white font-700 text-sm transition-all mt-2">
+            Masuk
+          </button>
+        </div>
+        <p class="text-blue-300/40 text-xs text-center mt-6">© 2025 ${getC("app_title")} - ${getC("school_name")}</p>
+      </div>
+    </div>`;
+  }
+  
+  // ==================== DASHBOARD SHELL ====================
+  function renderDashboardShell(){
+    const pages={dashboard:renderDashboardContent,profile:renderProfile,calendar:renderCalendar,schedule:renderSchedule,grades:renderGrades,attendance:renderAttendance,achievements:renderAchievements};
+    const menuItems=[
+      {id:"dashboard",icon:"layout-dashboard",label:"Dashboard"},
+      {id:"profile",icon:"user-circle",label:"Profil Anak"},
+      {id:"calendar",icon:"calendar-days",label:"Kalender Akademik"},
+      {id:"schedule",icon:"clock",label:"Jadwal Pelajaran"},
+      {id:"grades",icon:"bar-chart-3",label:"Rekap Nilai"},
+      {id:"attendance",icon:"clipboard-check",label:"Rekap Kehadiran"},
+      {id:"achievements",icon:"trophy",label:"Catatan Prestasi"}
+    ];
+  
+    const sidebarClass=sidebarOpen?"w-64":"w-0 -ml-64 sm:w-20 sm:ml-0";
+  
+    return `
+    <div class="h-full w-full flex overflow-hidden" style="background:#f1f5f9">
+      <!-- Sidebar -->
+      <aside class="sidebar-gradient ${sidebarClass} transition-all duration-300 flex-shrink-0 flex flex-col h-full overflow-hidden z-30" id="sidebar">
+        <div class="p-5 flex items-center gap-3 border-b border-white/10 flex-shrink-0">
+          <div class="w-9 h-9 rounded-xl bg-blue-500 flex items-center justify-center flex-shrink-0">
+            <i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i>
+          </div>
+          <div class="${sidebarOpen?'':'sm:hidden'}">
+            <h2 class="text-white font-800 text-sm tracking-tight" id="sidebar-title">${getC("app_title")}</h2>
+            <p class="text-blue-300/50 text-[10px]">Monitoring Siswa</p>
+          </div>
+        </div>
+        <nav class="flex-1 py-3 px-3 space-y-1 overflow-auto">
+          ${menuItems.map(m=>`
+            <button data-page="${m.id}" class="sidebar-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm ${currentPage===m.id?'active bg-white/15 text-white font-600':'text-blue-200/70 hover:text-white'} transition-all">
+              <i data-lucide="${m.icon}" class="w-[18px] h-[18px] flex-shrink-0"></i>
+              <span class="${sidebarOpen?'':'sm:hidden'}">${m.label}</span>
+            </button>`).join("")}
+        </nav>
+        <div class="p-3 border-t border-white/10 flex-shrink-0">
+          <button id="logoutBtn" class="sidebar-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-red-300/70 hover:text-red-300">
+            <i data-lucide="log-out" class="w-[18px] h-[18px] flex-shrink-0"></i>
+            <span class="${sidebarOpen?'':'sm:hidden'}">Keluar</span>
+          </button>
+        </div>
+      </aside>
+  
+      <!-- Main -->
+      <div class="flex-1 flex flex-col h-full overflow-hidden min-w-0">
+        <!-- Topbar -->
+        <header class="bg-white border-b border-gray-200 px-4 sm:px-6 py-3 flex items-center justify-between flex-shrink-0">
+          <div class="flex items-center gap-3">
+            <button id="toggleSidebar" class="p-2 hover:bg-gray-100 rounded-lg transition"><i data-lucide="menu" class="w-5 h-5 text-gray-500"></i></button>
+            <div>
+              <h1 class="text-sm font-700 text-gray-800">${menuItems.find(m=>m.id===currentPage)?.label||"Dashboard"}</h1>
+              <p class="text-[11px] text-gray-400" id="topbar-school">${getC("school_name")}</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="text-right hidden sm:block">
+              <p class="text-xs font-600 text-gray-700">${studentData.parentName}</p>
+              <p class="text-[10px] text-gray-400">Orang Tua</p>
+            </div>
+            <div class="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center">
+              <i data-lucide="user" class="w-4 h-4 text-blue-600"></i>
+            </div>
+          </div>
+        </header>
+  
+        <!-- Content -->
+        <main class="flex-1 overflow-auto p-4 sm:p-6">
+          ${(pages[currentPage]||renderDashboardContent)()}
+        </main>
+      </div>
+    </div>`;
+  }
+  
+  // ==================== DASHBOARD CONTENT ====================
+  function renderDashboardContent(){
+    const semAvgs=semesters.map(s=>{
+      const grades=gradesData[s.id];
+      return Math.round(grades.reduce((a,g)=>a+g.avg,0)/grades.length);
+    });
+    const maxAvg=Math.max(...semAvgs,100);
+    const totalHadir=Object.values(attendanceData).reduce((a,d)=>a+d.hadir,0);
+    const totalAll=Object.values(attendanceData).reduce((a,d)=>a+d.total,0);
+    const pctHadir=Math.round(totalHadir/totalAll*100);
+  
+    return `
+    <div class="space-y-6 max-w-6xl mx-auto">
+      <!-- Welcome -->
+      <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-6 text-white fade-in flex items-center gap-5 flex-wrap">
+        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 text-3xl">👦</div>
+        <div class="flex-1 min-w-[200px]">
+          <p class="text-blue-100 text-xs">Selamat Datang, ${studentData.parentName}</p>
+          <h2 class="text-xl font-800 mt-0.5">${studentData.name}</h2>
+          <p class="text-blue-200 text-sm">Kelas ${studentData.class} · NIS ${studentData.nis}</p>
+        </div>
+        <div class="flex gap-3 flex-wrap">
+          <div class="bg-white/15 rounded-xl px-4 py-2 text-center"><p class="text-2xl font-800">${semAvgs[semAvgs.length-1]}</p><p class="text-[10px] text-blue-200">Rata-rata Nilai</p></div>
+          <div class="bg-white/15 rounded-xl px-4 py-2 text-center"><p class="text-2xl font-800">${pctHadir}%</p><p class="text-[10px] text-blue-200">Kehadiran</p></div>
+          <div class="bg-white/15 rounded-xl px-4 py-2 text-center"><p class="text-2xl font-800">${achievements.length}</p><p class="text-[10px] text-blue-200">Prestasi</p></div>
+        </div>
+      </div>
+  
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <!-- Chart -->
+        <div class="lg:col-span-2 bg-white rounded-2xl p-5 shadow-sm card-hover fade-in stagger-1">
+          <h3 class="font-700 text-gray-800 text-sm mb-4 flex items-center gap-2"><i data-lucide="trending-up" class="w-4 h-4 text-blue-500"></i> Grafik Nilai Per Semester</h3>
+          <div class="space-y-4">
+            <!-- Bar Chart -->
+            <div>
+              <p class="text-xs font-600 text-gray-600 mb-3">Rata-rata Nilai (Bar)</p>
+              <div class="flex items-end gap-3 h-40 px-2">
+                ${semAvgs.map((v,i)=>`
+                <div class="flex-1 flex flex-col items-center gap-1">
+                  <span class="text-xs font-700 text-gray-700">${v}</span>
+                  <div class="w-full rounded-t-lg chart-bar ${v>=80?'bg-blue-500':v>=70?'bg-amber-400':'bg-red-400'}" style="height:${v/maxAvg*100}%"></div>
+                  <span class="text-[9px] text-gray-400 text-center leading-tight">${semesters[i].label.replace("Sem ","S").replace(" - ","<br>")}</span>
+                </div>`).join("")}
+              </div>
+            </div>
+            <!-- Line Chart -->
+            <div>
+              <p class="text-xs font-600 text-gray-600 mb-3">Tren Nilai (Garis)</p>
+              <svg class="w-full h-32" viewBox="0 0 300 120" preserveAspectRatio="xMidYMid meet">
+                <!-- Grid -->
+                <line x1="30" y1="100" x2="280" y2="100" stroke="#e5e7eb" stroke-width="1"/>
+                <line x1="30" y1="60" x2="280" y2="60" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="3"/>
+                <line x1="30" y1="20" x2="280" y2="20" stroke="#e5e7eb" stroke-width="1"/>
+                <!-- Polyline -->
+                <polyline points="${semAvgs.map((v,i)=>`${30+i*80},${100-(v/100)*80}`).join(' ')}" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Dots -->
+                ${semAvgs.map((v,i)=>`<circle cx="${30+i*80}" cy="${100-(v/100)*80}" r="3" fill="#2563eb"/>`).join("")}
+                <!-- Labels -->
+                ${semAvgs.map((v,i)=>`<text x="${30+i*80}" y="115" text-anchor="middle" font-size="10" fill="#999">${semesters[i].label.substring(0,3)}</text>`).join("")}
+              </svg>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Attendance Ring -->
+        <div class="bg-white rounded-2xl p-5 shadow-sm card-hover fade-in stagger-2">
+          <h3 class="font-700 text-gray-800 text-sm mb-4 flex items-center gap-2"><i data-lucide="pie-chart" class="w-4 h-4 text-green-500"></i> Kehadiran Total</h3>
+          <div class="flex flex-col items-center">
+            <div class="relative w-32 h-32 mb-3">
+              <svg viewBox="0 0 36 36" class="w-full h-full -rotate-90">
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#e5e7eb" stroke-width="3"/>
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#22c55e" stroke-width="3" stroke-dasharray="${pctHadir} ${100-pctHadir}" stroke-linecap="round"/>
+              </svg>
+              <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <span class="text-2xl font-800 text-gray-800">${pctHadir}%</span>
+                <span class="text-[10px] text-gray-400">Hadir</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-x-6 gap-y-1 text-xs">
+              <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-green-500"></span>Hadir: ${totalHadir}</div>
+              <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-yellow-400"></span>Sakit: ${Object.values(attendanceData).reduce((a,d)=>a+d.sakit,0)}</div>
+              <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-400"></span>Izin: ${Object.values(attendanceData).reduce((a,d)=>a+d.izin,0)}</div>
+              <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-400"></span>Alpha: ${Object.values(attendanceData).reduce((a,d)=>a+d.alpha,0)}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Achievements -->
+      <div class="bg-white rounded-2xl p-5 shadow-sm card-hover fade-in stagger-3">
+        <h3 class="font-700 text-gray-800 text-sm mb-4 flex items-center gap-2"><i data-lucide="trophy" class="w-4 h-4 text-amber-500"></i> Prestasi Terbaru</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          ${achievements.slice(0,3).map(a=>`
+          <div class="flex items-start gap-3 p-3 rounded-xl bg-amber-50 border border-amber-100">
+            <div class="w-9 h-9 rounded-lg bg-amber-400 flex items-center justify-center flex-shrink-0"><i data-lucide="${a.icon}" class="w-4 h-4 text-white"></i></div>
+            <div><p class="text-xs font-600 text-gray-800">${a.title}</p><p class="text-[10px] text-gray-400 mt-0.5">${a.date} · ${a.type}</p></div>
+          </div>`).join("")}
+        </div>
+      </div>
+    </div>`;
+  }
+  
+  // ==================== PROFILE ====================
+  function renderProfile(){
+    const fields=[
+      {icon:"user",label:"Nama Lengkap",value:studentData.name},
+      {icon:"hash",label:"Nomor Induk Siswa",value:studentData.nis},
+      {icon:"users",label:"Jenis Kelamin",value:studentData.gender},
+      {icon:"map-pin",label:"Tempat, Tanggal Lahir",value:`${studentData.birthPlace}, ${studentData.birthDate}`},
+      {icon:"home",label:"Alamat",value:studentData.address},
+      {icon:"book-open",label:"Kelas",value:studentData.class},
+      {icon:"user-check",label:"Nama Orang Tua",value:studentData.parentName},
+      {icon:"phone",label:"No. HP Orang Tua",value:studentData.parentPhone}
+    ];
+    return `
+    <div class="max-w-3xl mx-auto space-y-6">
+      <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-6 text-white text-center fade-in">
+        <div class="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-3 text-5xl">👦</div>
+        <h2 class="text-xl font-800">${studentData.name}</h2>
+        <p class="text-blue-200 text-sm">Kelas ${studentData.class} · NIS ${studentData.nis}</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm fade-in stagger-1">
+        <h3 class="font-700 text-gray-800 text-sm mb-4">Data Diri Siswa</h3>
+        <div class="space-y-3">
+          ${fields.map(f=>`
+          <div class="flex items-start gap-3 p-3 rounded-xl bg-gray-50">
+            <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0"><i data-lucide="${f.icon}" class="w-4 h-4 text-blue-600"></i></div>
+            <div><p class="text-[10px] text-gray-400 font-500">${f.label}</p><p class="text-sm text-gray-800 font-600">${f.value}</p></div>
+          </div>`).join("")}
+        </div>
+      </div>
+    </div>`;
+  }
+  
+  // ==================== CALENDAR ====================
+  function renderCalendar(){
+    return `
+    <div class="max-w-3xl mx-auto space-y-5">
+      <div class="bg-white rounded-2xl p-5 shadow-sm fade-in">
+        <h3 class="font-700 text-gray-800 text-sm mb-4 flex items-center gap-2"><i data-lucide="calendar-days" class="w-4 h-4 text-blue-500"></i> Kalender Akademik 2024/2025</h3>
+        <div class="flex gap-3 mb-4">
+          <span class="flex items-center gap-1.5 text-xs"><span class="w-3 h-3 rounded bg-red-100 border border-red-300"></span>Hari Libur</span>
+          <span class="flex items-center gap-1.5 text-xs"><span class="w-3 h-3 rounded bg-blue-100 border border-blue-300"></span>Kegiatan Sekolah</span>
+        </div>
+        <div class="space-y-2">
+          ${calendarEvents.map(e=>`
+          <div class="flex items-center gap-3 p-3 rounded-xl ${e.type==='libur'?'bg-red-50 border border-red-100':'bg-blue-50 border border-blue-100'}">
+            <div class="w-8 h-8 rounded-lg ${e.type==='libur'?'bg-red-400':'bg-blue-400'} flex items-center justify-center flex-shrink-0">
+              <i data-lucide="${e.type==='libur'?'calendar-off':'calendar-check'}" class="w-4 h-4 text-white"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-600 text-gray-800">${e.event}</p>
+              <p class="text-[10px] text-gray-400">${e.date}</p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full font-500 flex-shrink-0 ${e.type==='libur'?'bg-red-100 text-red-600':'bg-blue-100 text-blue-600'}">${e.type==='libur'?'Libur':'Kegiatan'}</span>
+          </div>`).join("")}
+        </div>
+      </div>
+    </div>`;
+  }
+  
+  // ==================== SCHEDULE ====================
+  function renderSchedule(){
+    const days=Object.keys(schedule);
+    return `
+    <div class="max-w-4xl mx-auto space-y-5">
+      <div class="bg-white rounded-2xl p-5 shadow-sm fade-in">
+        <h3 class="font-700 text-gray-800 text-sm mb-4 flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-blue-500"></i> Jadwal Pelajaran Kelas ${studentData.class}</h3>
+        <div class="flex gap-2 mb-4 overflow-x-auto pb-1">
+          ${days.map((d,i)=>`<button data-schedday="${d}" class="sched-tab px-4 py-2 rounded-xl text-xs font-600 whitespace-nowrap transition-all ${i===0?'bg-blue-500 text-white':'bg-gray-100 text-gray-500 hover:bg-gray-200'}">${d}</button>`).join("")}
+        </div>
+        ${days.map((d,i)=>`
+        <div class="sched-content ${i===0?'':'hidden'}" data-schedcontent="${d}">
+          <div class="space-y-2">
+            ${schedule[d].map((s,j)=>{
+              const st=scheduleAttendance[d][j];
+              const isHadir=st==="Hadir";
+              return `
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-gray-50">
+                <div class="text-center flex-shrink-0 w-20">
+                  <p class="text-[10px] text-gray-400 font-500">${s.time}</p>
+                </div>
+                <div class="flex-1"><p class="text-sm font-600 text-gray-800">${s.subj}</p></div>
+                <span class="text-[10px] px-2.5 py-1 rounded-full font-600 ${isHadir?'bg-green-100 text-green-600':'bg-red-100 text-red-600'}">${st}</span>
+              </div>`;
+            }).join("")}
+          </div>
+        </div>`).join("")}
+      </div>
+    </div>`;
+  }
+  
+  // ==================== GRADES ====================
+  function renderGrades(){
+    return `
+    <div class="max-w-5xl mx-auto space-y-5">
+      <div class="bg-white rounded-2xl p-5 shadow-sm fade-in">
+        <h3 class="font-700 text-gray-800 text-sm mb-4 flex items-center gap-2"><i data-lucide="bar-chart-3" class="w-4 h-4 text-blue-500"></i> Rekapan Nilai</h3>
+        <div class="flex gap-2 mb-4 overflow-x-auto pb-1">
+          ${semesters.map((s,i)=>`<button data-gradsem="${s.id}" class="grad-tab px-3 py-2 rounded-xl text-[11px] font-600 whitespace-nowrap transition-all ${i===0?'bg-blue-500 text-white':'bg-gray-100 text-gray-500 hover:bg-gray-200'}">${s.label}</button>`).join("")}
+        </div>
+        ${semesters.map((s,i)=>{
+          const grades=gradesData[s.id];
+          const semAvg=Math.round(grades.reduce((a,g)=>a+g.avg,0)/grades.length);
+          return `
+          <div class="grad-content ${i===0?'':'hidden'}" data-gradcontent="${s.id}">
+            <div class="mb-3 p-3 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-between">
+              <span class="text-xs font-600 text-blue-700">Rata-rata Semester</span>
+              <span class="text-lg font-800 text-blue-700">${semAvg}</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs">
+                <thead><tr class="border-b border-gray-200">
+                  <th class="text-left py-2.5 px-3 font-600 text-gray-500">Mata Pelajaran</th>
+                  <th class="text-center py-2.5 px-2 font-600 text-gray-500">Tugas</th>
+                  <th class="text-center py-2.5 px-2 font-600 text-gray-500">Kuis</th>
+                  <th class="text-center py-2.5 px-2 font-600 text-gray-500">UTS</th>
+                  <th class="text-center py-2.5 px-2 font-600 text-gray-500">UAS</th>
+                  <th class="text-center py-2.5 px-2 font-600 text-gray-500">Rata-rata</th>
+                </tr></thead>
+                <tbody>
+                  ${grades.map(g=>`
+                  <tr class="border-b border-gray-100 hover:bg-gray-50">
+                    <td class="py-2.5 px-3 font-500 text-gray-800">${g.subject}</td>
+                    <td class="text-center py-2.5 px-2 text-gray-600">${g.tugas}</td>
+                    <td class="text-center py-2.5 px-2 text-gray-600">${g.kuis}</td>
+                    <td class="text-center py-2.5 px-2 text-gray-600">${g.uts}</td>
+                    <td class="text-center py-2.5 px-2 text-gray-600">${g.uas}</td>
+                    <td class="text-center py-2.5 px-2"><span class="font-700 px-2 py-0.5 rounded-lg ${g.avg>=80?'bg-green-100 text-green-700':g.avg>=70?'bg-amber-100 text-amber-700':'bg-red-100 text-red-700'}">${g.avg}</span></td>
+                  </tr>`).join("")}
+                </tbody>
+              </table>
+            </div>
+          </div>`;
+        }).join("")}
+      </div>
+    </div>`;
+  }
+  
+  // ==================== ATTENDANCE ====================
+  function renderAttendance(){
+    return `
+    <div class="max-w-4xl mx-auto space-y-5">
+      <div class="bg-white rounded-2xl p-5 shadow-sm fade-in">
+        <h3 class="font-700 text-gray-800 text-sm mb-4 flex items-center gap-2"><i data-lucide="clipboard-check" class="w-4 h-4 text-green-500"></i> Rekap Kehadiran</h3>
+        <div class="space-y-4">
+          ${semesters.map(s=>{
+            const d=attendanceData[s.id];
+            const pct=Math.round(d.hadir/d.total*100);
+            return `
+            <div class="p-4 rounded-xl bg-gray-50 border border-gray-100">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-xs font-700 text-gray-800">${s.label}</h4>
+                <span class="text-xs font-700 ${pct>=90?'text-green-600':pct>=80?'text-amber-600':'text-red-600'}">${pct}% Hadir</span>
+              </div>
+              <div class="w-full h-2.5 bg-gray-200 rounded-full mb-3 overflow-hidden">
+                <div class="h-full rounded-full progress-bar ${pct>=90?'bg-green-500':pct>=80?'bg-amber-400':'bg-red-400'}" style="width:${pct}%"></div>
+              </div>
+              <div class="grid grid-cols-4 gap-3 text-center">
+                <div class="p-2 rounded-lg bg-green-50"><p class="text-lg font-800 text-green-600">${d.hadir}</p><p class="text-[10px] text-gray-400">Hadir</p></div>
+                <div class="p-2 rounded-lg bg-yellow-50"><p class="text-lg font-800 text-yellow-600">${d.sakit}</p><p class="text-[10px] text-gray-400">Sakit</p></div>
+                <div class="p-2 rounded-lg bg-blue-50"><p class="text-lg font-800 text-blue-600">${d.izin}</p><p class="text-[10px] text-gray-400">Izin</p></div>
+                <div class="p-2 rounded-lg bg-red-50"><p class="text-lg font-800 text-red-600">${d.alpha}</p><p class="text-[10px] text-gray-400">Alpha</p></div>
+              </div>
+            </div>`;
+          }).join("")}
+        </div>
+      </div>
+    </div>`;
+  }
+  
+  // ==================== ACHIEVEMENTS ====================
+  function renderAchievements(){
+    const colors={Akademik:{bg:"bg-blue-50",border:"border-blue-100",icon:"bg-blue-500"},Kelas:{bg:"bg-amber-50",border:"border-amber-100",icon:"bg-amber-500"},"Non-Akademik":{bg:"bg-purple-50",border:"border-purple-100",icon:"bg-purple-500"},Olahraga:{bg:"bg-green-50",border:"border-green-100",icon:"bg-green-500"}};
+    return `
+    <div class="max-w-3xl mx-auto space-y-5">
+      <div class="bg-white rounded-2xl p-5 shadow-sm fade-in">
+        <h3 class="font-700 text-gray-800 text-sm mb-4 flex items-center gap-2"><i data-lucide="trophy" class="w-4 h-4 text-amber-500"></i> Catatan Prestasi</h3>
+        <div class="space-y-3">
+          ${achievements.map(a=>{
+            const c=colors[a.type]||colors.Akademik;
+            return `
+            <div class="flex items-start gap-4 p-4 rounded-xl ${c.bg} border ${c.border}">
+              <div class="w-10 h-10 rounded-xl ${c.icon} flex items-center justify-center flex-shrink-0"><i data-lucide="${a.icon}" class="w-5 h-5 text-white"></i></div>
+              <div class="flex-1">
+                <p class="text-sm font-700 text-gray-800">${a.title}</p>
+                <div class="flex items-center gap-3 mt-1">
+                  <span class="text-[10px] text-gray-400 flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i>${a.date}</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-white/80 text-gray-500 font-500">${a.type}</span>
+                </div>
+              </div>
+            </div>`;
+          }).join("")}
+        </div>
+      </div>
+    </div>`;
+  }
+  
+  // ==================== EVENTS ====================
+  function attachEvents(){
+    // Login
+    const loginBtn=document.getElementById("loginBtn");
+    if(loginBtn){
+      loginBtn.addEventListener("click",e=>{
+        e.preventDefault();
+        const c=document.getElementById("childName").value.trim();
+        const p=document.getElementById("parentName").value.trim();
+        const err=document.getElementById("loginError");
+        if(!c||!p){err.textContent="Mohon isi nama lengkap anak dan orang tua.";err.classList.remove("hidden");return;}
+        studentData.name=c;studentData.parentName=p;
+        currentPage="dashboard";render();
+      });
+    }
+  
+    // Sidebar nav
+    document.querySelectorAll("[data-page]").forEach(btn=>{
+      btn.addEventListener("click",()=>{currentPage=btn.dataset.page;render();});
+    });
+  
+    // Toggle sidebar
+    const tog=document.getElementById("toggleSidebar");
+    if(tog) tog.addEventListener("click",()=>{sidebarOpen=!sidebarOpen;render();});
+  
+    // Logout
+    const lo=document.getElementById("logoutBtn");
+    if(lo) lo.addEventListener("click",()=>{currentPage="login";render();});
+  
+    // Schedule tabs
+    document.querySelectorAll(".sched-tab").forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        document.querySelectorAll(".sched-tab").forEach(b=>{b.className=b.className.replace("bg-blue-500 text-white","bg-gray-100 text-gray-500 hover:bg-gray-200");});
+        btn.className=btn.className.replace("bg-gray-100 text-gray-500 hover:bg-gray-200","bg-blue-500 text-white");
+        document.querySelectorAll(".sched-content").forEach(c=>c.classList.add("hidden"));
+        document.querySelector(`[data-schedcontent="${btn.dataset.schedday}"]`).classList.remove("hidden");
+      });
+    });
+  
+    // Grade tabs
+    document.querySelectorAll(".grad-tab").forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        document.querySelectorAll(".grad-tab").forEach(b=>{b.className=b.className.replace("bg-blue-500 text-white","bg-gray-100 text-gray-500 hover:bg-gray-200");});
+        btn.className=btn.className.replace("bg-gray-100 text-gray-500 hover:bg-gray-200","bg-blue-500 text-white");
+        document.querySelectorAll(".grad-content").forEach(c=>c.classList.add("hidden"));
+        document.querySelector(`[data-gradcontent="${btn.dataset.gradsem}"]`).classList.remove("hidden");
+      });
+    });
+  }
+  
+  // ==================== ELEMENT SDK ====================
+  window.elementSdk.init({
+    defaultConfig,
+    onConfigChange:async(config)=>{
+      const t=document.getElementById("login-title");if(t)t.textContent=config.app_title||defaultConfig.app_title;
+      const s=document.getElementById("login-school");if(s)s.textContent=config.school_name||defaultConfig.school_name;
+      const st=document.getElementById("sidebar-title");if(st)st.textContent=config.app_title||defaultConfig.app_title;
+      const ts=document.getElementById("topbar-school");if(ts)ts.textContent=config.school_name||defaultConfig.school_name;
+    },
+    mapToCapabilities:(config)=>({
+      recolorables:[
+        {get:()=>config.bg_color||defaultConfig.bg_color,set:v=>{config.bg_color=v;window.elementSdk.setConfig({bg_color:v})}},
+        {get:()=>config.surface_color||defaultConfig.surface_color,set:v=>{config.surface_color=v;window.elementSdk.setConfig({surface_color:v})}},
+        {get:()=>config.text_color||defaultConfig.text_color,set:v=>{config.text_color=v;window.elementSdk.setConfig({text_color:v})}},
+        {get:()=>config.primary_color||defaultConfig.primary_color,set:v=>{config.primary_color=v;window.elementSdk.setConfig({primary_color:v})}},
+        {get:()=>config.accent_color||defaultConfig.accent_color,set:v=>{config.accent_color=v;window.elementSdk.setConfig({accent_color:v})}}
+      ],
+      borderables:[],
+      fontEditable:{get:()=>config.font_family||"Plus Jakarta Sans",set:v=>{config.font_family=v;window.elementSdk.setConfig({font_family:v})}},
+      fontSizeable:{get:()=>config.font_size||14,set:v=>{config.font_size=v;window.elementSdk.setConfig({font_size:v})}}
+    }),
+    mapToEditPanelValues:(config)=>new Map([
+      ["app_title",config.app_title||defaultConfig.app_title],
+      ["school_name",config.school_name||defaultConfig.school_name]
+    ])
+  });
+  
+  render();
+  </script>
+   <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fbade74e5879bda',t:'MTc3ODc3MTgzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
+  </body></html>
